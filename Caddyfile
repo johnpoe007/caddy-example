@@ -1,0 +1,20 @@
+port.johnmpoe.com {
+    reverse_proxy portainer:9443 {
+      transport http {
+          tls
+          tls_insecure_skip_verify
+      }
+    }
+}
+
+b.johnmpoe.com {
+    reverse_proxy whoami:80
+    @fuck_off_world {
+        not remote_ip 192.168.7.0/24
+    }
+    respond @fuck_off_world 403
+}
+
+c.johnmpoe.com {
+  reverse_proxy nginx:80
+}

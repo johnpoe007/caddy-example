@@ -1,0 +1,11 @@
+services:
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    hostname: nginx
+
+networks:
+  default:
+    name: caddy_net
+    external: true

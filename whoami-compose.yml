@@ -1,0 +1,11 @@
+services:
+
+  whoami:
+    image: "containous/whoami"
+    container_name: "whoami"
+    hostname: "whoami"
+
+networks:
+  default:
+    name: caddy_net
+    external: true
